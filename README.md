@@ -39,3 +39,9 @@ drop text search dictionary ru_address_thesaurus;
 drop text search dictionary ru_address_synonym;
 drop text search dictionary russian;
 ```
+
+Пример
+```
+select to_tsvector('ru_address', 'город Энск улица Заводская дом 5') 
+@@ plainto_tsquery('ru_address', 'г. Энск ул. Заводская д. 5');
+```
